@@ -11,6 +11,7 @@ Demais referências para estudo básico:
 
 * Declarar classe;
 * Declara método;
+* Herança;
 * Cláusulas for, if, switch;
 * Tratamento de dicionários e listas;
 * Tratamento exceção;

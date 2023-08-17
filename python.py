@@ -128,7 +128,17 @@ class Pessoa:
             conteudo = arquivo.readlines()
             for linha in conteudo:
                 print(linha)
-            
+    
+    def exemplo_retorno_tipado(self) -> str:
+        """Exemplo de retorno tipado."""
+        return "Exemplo de retorno tipado como string."
+
+class Funcionario(Pessoa):
+    """Exemplo de uso de herança."""
+    def __init__(self, sexo:str, cargo:str, idade=-1):
+        super().__init__(sexo)
+        self.cargo = cargo
+         
 def main():
     """Método main."""
     pessoa = Pessoa("masculio", 37)
@@ -141,6 +151,7 @@ def main():
     pessoa.manipulacao_string("veja isso aqui")
     pessoa.escrever_arquivo("teste.txt")
     pessoa.ler_arquivo("teste.txt")
+    pessoa.exemplo_retorno_tipado()
 
 if __name__ == "__main__":
     main()
