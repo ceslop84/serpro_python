@@ -15,6 +15,7 @@ Demais referências para estudo básico:
 * Tratamento de dicionários e listas;
 * Tratamento exceção;
 * Conexão a banco de dados e CRUD;
+* Ler e escrever em arquivos;
 * Manipulação de string;
 * Testes unitários;
 * Documentação (docstring);
