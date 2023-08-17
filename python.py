@@ -111,6 +111,24 @@ class Pessoa:
         """Função para ser testada."""
         return valor1 + valor2
 
+    def escrever_arquivo(self, nome_arquivo:str):
+        conteudo_lista = [1,2,3,4,5,6,7,8,9,10]
+        conteudo_dicionario = {"nome": "teste", "idade": 37}
+        
+        # r - read, a - append, w - write, x - create
+        with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
+            for linha in conteudo_lista:
+                arquivo.write(f"{linha}\n")
+            for key, value in conteudo_dicionario.items():
+                arquivo.write(f"{key}: {value}\n")
+
+    def ler_arquivo(self, nome_arquivo:str):     
+        # r - read, a - append, w - write, x - create
+        with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
+            conteudo = arquivo.readlines()
+            for linha in conteudo:
+                print(linha)
+            
 def main():
     """Método main."""
     pessoa = Pessoa("masculio", 37)
@@ -121,6 +139,8 @@ def main():
     pessoa.conexao_banco_dados()
     pessoa.documentacao(1, 2.0, "ahhhh")
     pessoa.manipulacao_string("veja isso aqui")
+    pessoa.escrever_arquivo("teste.txt")
+    pessoa.ler_arquivo("teste.txt")
 
 if __name__ == "__main__":
     main()
