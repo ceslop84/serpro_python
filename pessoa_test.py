@@ -1,6 +1,6 @@
 """Módulo de testes."""
 import unittest
-from python import Pessoa
+from pessoa import Pessoa
 
 class PessoaTest(unittest.TestCase):
     """Classe de teste unitário."""
@@ -13,4 +13,5 @@ class PessoaTest(unittest.TestCase):
         self.assertEqual(obs, real)
 
 if __name__ == '__main__':
-    unittest.main()        
+    unittest.main()
+    

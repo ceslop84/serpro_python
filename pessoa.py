@@ -55,6 +55,8 @@ class Pessoa:
                 print("É homem.")
             case "feminino":
                 print("É mulher.")
+            case _:
+                print("Não previsto!")
 
     def tratamento_excecao(self):
         """Tratamento de exceções."""
@@ -106,15 +108,18 @@ class Pessoa:
         """Método para manipulação de strings."""
         print("Primeiros 5 caracteres: ", texto[:5])
         print(f"Esta string tem {len(texto)} caracteres.")
+        print(f"Em caixa baixa: {texto.lower()}")
+        print(f"Em caixa ALTA: {texto.upper()}")
 
-    def funcao_para_ser_testada(self, valor1:int, valor2:int):
+    def funcao_para_ser_testada(self, valor1:int, valor2:int) -> int:
         """Função para ser testada."""
         return valor1 + valor2
 
     def escrever_arquivo(self, nome_arquivo:str):
+        """Método para escrever em arquivo."""
         conteudo_lista = [1,2,3,4,5,6,7,8,9,10]
         conteudo_dicionario = {"nome": "teste", "idade": 37}
-        
+
         # r - read, a - append, w - write, x - create
         with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
             for linha in conteudo_lista:
@@ -122,36 +127,14 @@ class Pessoa:
             for key, value in conteudo_dicionario.items():
                 arquivo.write(f"{key}: {value}\n")
 
-    def ler_arquivo(self, nome_arquivo:str):     
+    def ler_arquivo(self, nome_arquivo:str):
+        """Método para ler arquivos."""  
         # r - read, a - append, w - write, x - create
         with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
             conteudo = arquivo.readlines()
             for linha in conteudo:
                 print(linha)
-    
+
     def exemplo_retorno_tipado(self) -> str:
         """Exemplo de retorno tipado."""
         return "Exemplo de retorno tipado como string."
-
-class Funcionario(Pessoa):
-    """Exemplo de uso de herança."""
-    def __init__(self, sexo:str, cargo:str, idade=-1):
-        super().__init__(sexo)
-        self.cargo = cargo
-         
-def main():
-    """Método main."""
-    pessoa = Pessoa("masculio", 37)
-    pessoa.laco_for()
-    pessoa.clausula_if()
-    pessoa.clausula_switch()
-    pessoa.tratamento_excecao()
-    pessoa.conexao_banco_dados()
-    pessoa.documentacao(1, 2.0, "ahhhh")
-    pessoa.manipulacao_string("veja isso aqui")
-    pessoa.escrever_arquivo("teste.txt")
-    pessoa.ler_arquivo("teste.txt")
-    pessoa.exemplo_retorno_tipado()
-
-if __name__ == "__main__":
-    main()
