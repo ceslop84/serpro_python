@@ -166,7 +166,7 @@ class Pessoa:
         print("Agora formatado: ", agora.strftime("%Y-%m-%d"))
         timedelta = datetime.timedelta(weeks=1)
         print("Daqui uma semana: ", (agora+timedelta).strftime("%Y-%m-%d"))
-        timedelta = datetime.timedelta(weeks=1)
+        timedelta = datetime.timedelta(days=1)
         print("Daqui 30 dias: ", (agora+timedelta).strftime("%Y-%m-%d"))
         final_ano = datetime.date(2023, 12, 31)
         diff = final_ano - datetime.date.today()
