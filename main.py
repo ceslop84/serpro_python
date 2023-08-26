@@ -12,6 +12,7 @@ def main():
     pessoa.tratamento_excecao()
     pessoa.documentacao(1, 2.0, "ahhhh")
     pessoa.manipulacao_string("veja isso aqui")
+    pessoa.manipulacao_data("12/07/1984")
     pessoa.conexao_banco_dados()
     pessoa.escrever_arquivo("teste.txt")
     pessoa.ler_arquivo("teste.txt")

@@ -1,5 +1,6 @@
 """Módulo de estudo de python."""
 import sqlite3
+import datetime
 
 class Pessoa:
     """Classe pessoa em python.""" 
@@ -121,6 +122,8 @@ class Pessoa:
         print(f"Esta string tem {len(texto)} caracteres.")
         print(f"Em caixa baixa: {texto.lower()}")
         print(f"Em caixa ALTA: {texto.upper()}")
+        print(f"Substituindo: {texto.replace('a', 'b')}")
+        print(f"Split: {texto.split(' ')}")
 
     def funcao_para_ser_testada(self, valor1:int, valor2:int) -> int:
         """Função para ser testada."""
@@ -151,5 +154,23 @@ class Pessoa:
         return "Exemplo de retorno tipado como string."
 
     def entrada_usuario(self):
+        """Método para capturar entrada de dados do usuário."""
         texto = input("Entrar com o dado de teste:")
         print(f"O texto de entrada é: {texto}")
+
+    def manipulacao_data(self, data: str):
+        """Método para manipulação de datas."""
+        agora = datetime.datetime.now()
+        print("Parâmetros de hoje", agora.year, agora.month, agora.day,
+              agora.hour, agora.minute, agora.second)
+        print("Agora formatado: ", agora.strftime("%Y-%m-%d"))
+        timedelta = datetime.timedelta(weeks=1)
+        print("Daqui uma semana: ", (agora+timedelta).strftime("%Y-%m-%d"))
+        timedelta = datetime.timedelta(weeks=1)
+        print("Daqui 30 dias: ", (agora+timedelta).strftime("%Y-%m-%d"))
+        final_ano = datetime.date(2023, 12, 31)
+        diff = final_ano - datetime.date.today()
+        print("Dias para o final do ano: ", diff.days)
+        data_list = [int(d) for d in data.split("/")]
+        data_informada = datetime.date(data_list[2], data_list[1], data_list[0])
+        print("Data informada: ", data_informada.strftime("%d/%m/%Y"))
