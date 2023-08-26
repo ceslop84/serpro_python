@@ -8,7 +8,7 @@ class Pessoa:
         self.sexo = sexo
 
     @property
-    def idade(self):
+    def idade(self) -> int:
         """Método getter para idade."""
         return self._idade
 
@@ -16,6 +16,16 @@ class Pessoa:
     def idade(self, valor):
         """Método setter para idade."""
         self._idade = valor
+
+    @property
+    def sexo(self) -> str:
+        """Método getter para sexo."""
+        return self._sexo
+
+    @sexo.setter
+    def sexo(self, valor):
+        """Método setter para sexo."""
+        self._sexo = valor
 
     def _metodo_protected(self):
         print("Idade", self.idade)
@@ -68,7 +78,7 @@ class Pessoa:
         finally:
             print("Isso aqui sempre vai ser tratado!")
 
-    def documentacao(self, param1:int, param2:float, param3:str):
+    def documentacao(self, param1:int, param2:float, param3:str) -> str:
         """
         Método exemplo dedocumentação.
 
@@ -83,7 +93,8 @@ class Pessoa:
         return f"{param1} e {param2} e {param3}"
 
     def conexao_banco_dados(self):
-        """Método para conexão ao banco de dados."""
+        """Método para conexão ao banco de dados."""   
+
         try:
             connection = sqlite3.connect("database.db")
         except Exception as exp1: #pylint: disable=broad-exception-caught
@@ -138,3 +149,7 @@ class Pessoa:
     def exemplo_retorno_tipado(self) -> str:
         """Exemplo de retorno tipado."""
         return "Exemplo de retorno tipado como string."
+
+    def entrada_usuario(self):
+        texto = input("Entrar com o dado de teste:")
+        print(f"O texto de entrada é: {texto}")
